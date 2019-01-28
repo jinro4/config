@@ -1,0 +1,29 @@
+# This is Git's per-user configuration file.
+[user]
+	name = Tamm
+	email = tammwinnie@gmail.com
+
+[alias]
+l = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue)<%an>%Creset' --abbrev-commit
+cleanbranch = "!git branch -d $(git branch --merged | grep -v '^\\*\\|\\<master$')"
+ch = "!git checkout $(git branch -vv | grep -v '^\\*' | fzf | awk '{print $1}')"
+s = status -s
+a = "!git diff-select | xargs git add"
+diff-select = "! # add files with fzf preview diffs; \n\
+    f() { \
+        _height=$(stty size | awk '{print $1}');\
+        git diff-info \
+        | fzf -m --header \"$(git diff --shortstat)\" --preview \
+            \"if [[ {1} == '??' ]]; then cat {3}; else git diff {3}; fi \
+            | head -n $_height \
+            | pygmentize\" \
+        | awk '{print $3}'; \
+    }; f"
+diff-info = "! # get diff info;\n\
+    fileA=/tmp/git-s-$(uuidgen); \
+    fileB=/tmp/git-diff-$(uuidgen); \
+    git s | awk '{print $2,$1}' > $fileA; \
+    git diff --numstat | awk '{print $3,$1,$2}' > $fileB; \
+    join -t' ' -a 1 $fileA $fileB | awk '{print $2, \"(+\"$3 \",-\"$4\")\", $1}' | sed 's/(+,-)/./' | column -t -s' ' ; \
+    rm -f $fileA $fileB; \
+"
