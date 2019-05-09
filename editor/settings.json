@@ -1,0 +1,41 @@
+{
+    "window.zoomLevel": 0,
+    "editor.fontSize": 15,
+    "editor.fontFamily": "Monaco",
+    "editor.multiCursorModifier": "alt",
+    "editor.snippetSuggestions": "top",
+    "editor.formatOnPaste": false,
+    "editor.formatOnSave": false,
+    "editor.minimap.enabled": false,
+    "editor.renderWhitespace": "none",
+    "editor.renderControlCharacters": false,
+    "material-icon-theme.showUpdateMessage": false,
+    "javascript.validate.enable": false,
+    "files.trimTrailingWhitespace": true,
+    "files.insertFinalNewline": true,
+    "files.trimFinalNewlines": true,
+    "workbench.colorTheme": "Material Theme Palenight",
+    "cryptoticker.cryptoExchange": "Coinbase",
+    "cryptoticker.cryptoSymbols": [
+        "BTC",
+        "ETH",
+        "XLM",
+        "XRP",
+        "EOS",
+        "ZIL",
+    ],
+    "editor.emptySelectionClipboard": false,
+    "javascript.updateImportsOnFileMove.enabled": "always",
+    "debug.node.autoAttach": "on",
+    "breadcrumbs.enabled": true,
+    "workbench.editor.enablePreviewFromQuickOpen": false,
+    "explorer.openEditors.visible": 0,
+    "window.title": "${dirty} ${activeEditorMedium}${separator}${rootName}","[git-commit]": {
+        "editor.rulers": [
+            72
+        ]
+    },
+    "editor.cursorBlinking": "phase",
+    "telemetry.enableCrashReporter": false,
+    "telemetry.enableTelemetry": false,
+}
